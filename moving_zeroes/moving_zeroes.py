@@ -5,10 +5,9 @@ Returns: a List of integers
 def moving_zeroes(arr):
     # Your code here
     for i in arr:
-        if i == 0:
-            arr.remove(i)
-            arr.append(0)
-            
+        if i == 0: # if this element is 0,
+            arr.remove(i) # take it out and
+            arr.append(0) # put it on the end. Naturally, all non-zero numbers will end up at the beginning.
     return arr
 
 
