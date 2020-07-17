@@ -6,13 +6,12 @@ def single_number(arr):
     # Your code here
     oddball = None
 
-    for i in range(len(arr)):
-        k = i+1
-        # print('------i',i)
-        for j in range(k, len(arr)):
-            if arr[i] != arr[j] and arr[i] != oddball:
-                oddball = arr[i]
-                # print('------o',oddball)
+    for i in range(len(arr)-1):
+        popped = arr.pop(i) # pull off the item in question
+        if popped in arr: # if the item exists in the remaining array, that means it was in there twice to begin with, so
+            arr.insert(i,popped) # put it back, because it's not the oddball.
+        else: # otherwise,
+            oddball = popped # we've found the oddball!
 
     return oddball
 
