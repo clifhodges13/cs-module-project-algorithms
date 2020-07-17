@@ -4,8 +4,17 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
+    oddball = None
 
-    pass
+    for i in range(len(arr)):
+        k = i+1
+        # print('------i',i)
+        for j in range(k, len(arr)):
+            if arr[i] != arr[j] and arr[i] != oddball:
+                oddball = arr[i]
+                # print('------o',oddball)
+
+    return oddball
 
 
 if __name__ == '__main__':
